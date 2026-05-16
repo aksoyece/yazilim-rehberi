@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodePath — Hangi Dili Öğrenmeliyim?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-logo">CodePath</div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="tr" onclick="setLang('tr')">TR</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+  </nav>
+
+  <section class="hero" id="screen-hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <span class="hero-tag" id="hero-tag">Yazılım Dili Rehberi</span>
+      <h1 class="hero-title" id="hero-title">Hangi dili<br/><em>öğrenmeliyim?</em></h1>
+      <p class="hero-sub" id="hero-sub">3 soruya cevap ver, sana en uygun yazılım dilini ve öğrenme yolunu bulalım.</p>
+      <button class="cta-btn" onclick="startQuiz()" id="cta-btn">Başla →</button>
+    </div>
+    <div class="hero-visual">
+      <div class="code-block">
+        <div class="code-line"><span class="kw">const</span> <span class="var">yol</span> = <span class="fn">seniBekliyor</span>();</div>
+        <div class="code-line"><span class="kw">if</span> (<span class="var">yol</span>.<span class="fn">doğru</span>()) {</div>
+        <div class="code-line indent"><span class="fn">öğren</span>(<span class="str">"yazılım"</span>);</div>
+        <div class="code-line indent"><span class="fn">inşaEt</span>(<span class="str">"gelecek"</span>);</div>
+        <div class="code-line">}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quiz-section" id="screen-quiz" style="display:none;">
+    <div class="quiz-container">
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+      <p class="step-label" id="step-label"></p>
+      <h2 class="quiz-question" id="quiz-question"></h2>
+      <div class="quiz-options" id="quiz-options"></div>
+      <div class="quiz-nav">
+        <button class="nav-back" id="nav-back" onclick="goBack()">← <span id="back-label">Geri</span></button>
+        <button class="nav-next" id="nav-next" onclick="goNext()"><span id="next-label">Devam</span> →</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="result-section" id="screen-result" style="display:none;">
+    <div class="result-container">
+      <p class="result-tag" id="result-tag">Sonuçların hazır</p>
+      <h2 class="result-title" id="result-title">Sana özel öneriler</h2>
+      <div class="result-cards" id="result-cards"></div>
+      <button class="restart-btn" onclick="restart()" id="restart-btn">↩ Baştan Başla</button>
+    </div>
+  </section>
+
+  <section class="langs-section" id="screen-langs">
+    <div class="langs-header">
+      <h2 id="langs-title">Tüm Diller</h2>
+      <p id="langs-sub">Her dil hakkında detaylı bilgi al</p>
+    </div>
+    <div class="langs-grid" id="langs-grid"></div>
+  </section>
+
+  <footer class="footer">
+    <p id="footer-text">© 2025 CodePath — Yazılım öğrenme rehberi</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
